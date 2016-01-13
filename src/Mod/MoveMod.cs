@@ -2,12 +2,12 @@ using System.Collections;
 
 public class MoveMod{
 
-	/*Members*/
+	/*==============Members===============*/
 
-	/*Components*/
+	/*=============Components=============*/
 
 
-	/*Event*/
+	/*================Event===============*/
 
 	//NOTE : 不確定要不要
 	public event Action<T> onUndo;
@@ -15,7 +15,7 @@ public class MoveMod{
 	
 
 
-	/*Public Function*/
+	/*===========Public Function==========*/
 	//操作按下
 	public void onInputDown(){}
 
@@ -23,7 +23,7 @@ public class MoveMod{
 	public void onInputUp(){}
 	
 	
-	/*Private Function*/
+	/*==========Private Function==========*/
 
 
 

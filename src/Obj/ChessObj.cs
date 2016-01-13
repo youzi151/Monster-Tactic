@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class ChessObj{
 
-	/*Members*/
+	/*==============Members===============*/
 
 	//生命值health point
 	public float hp;
@@ -12,7 +12,7 @@ public class ChessObj{
 	public float ap;
 
 
-	/*Components*/
+	/*=============Components=============*/
 
 	//該單位的行動列表(移動、普攻、技能...等)
 	public List<ActionData> actionList;
@@ -21,14 +21,14 @@ public class ChessObj{
 	public PathFindComp pathFindComp;
 
 
-	/*Event*/
+	/*================Event===============*/
 	public event Action<T> onAction;
 	public event Action<T> onHurt;
 	public event Action<T> onDead;
 	
 
 
-	/*Public Function*/
+	/*===========Public Function==========*/
 	//行動
 	public void action(){}
 
@@ -40,7 +40,7 @@ public class ChessObj{
 	
 	
 
-	/*Private Function*/
+	/*==========Private Function==========*/
 
 	//移動到指定位置
 	private void moveTo(){}

@@ -16,7 +16,7 @@ A tactical game architecture for beginner
 
 <b>Obj</b>&nbsp;&nbsp;&nbsp;&nbsp;基本型的腳本，有自己獨立運作的功能。
 
-<b>Data</b>&nbsp;&nbsp;&nbsp;&nbsp;通常用於傳遞、存資料的物件。
+<b>Data</b>&nbsp;&nbsp;&nbsp;&nbsp;通常用於傳遞資料、被呼叫的物件。
 
 <b>Ctrl</b>&nbsp;&nbsp;&nbsp;&nbsp;會控制整個進程的重大物件。
 
@@ -28,3 +28,5 @@ A tactical game architecture for beginner
 <b>Manager</b>&nbsp;&nbsp;&nbsp;&nbsp;資源管理。
 
 <b>Util</b>&nbsp;&nbsp;&nbsp;&nbsp;公用。
+
+<b>其他</b>&nbsp;&nbsp;&nbsp;&nbsp;如Process的Node、Condition、Event...等，會讓該套功能模塊來自行定義。

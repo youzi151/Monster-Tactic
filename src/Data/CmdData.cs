@@ -2,12 +2,12 @@ using System.Collections;
 
 public class CmdData{
 
-	/*Members*/
+	/*==============Members===============*/
 
-	/*Components*/
+	/*=============Components=============*/
 
 
-	/*Event*/
+	/*================Event===============*/
 	public event Action<T> onDo;
 	public event Action<T> onUndo;
 	public event Action<T> onCancel;
@@ -15,7 +15,7 @@ public class CmdData{
 	
 
 
-	/*Public Function*/
+	/*===========Public Function==========*/
 	//執行
 	public void do(){}
 
@@ -27,7 +27,7 @@ public class CmdData{
 	
 	
 
-	/*Private Function*/
+	/*==========Private Function==========*/
 
 
 
