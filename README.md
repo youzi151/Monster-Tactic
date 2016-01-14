@@ -19,9 +19,10 @@ A tactical game architecture for beginner
 ## 概敘
 <br/>
 了解這個架構，可從內而外逐步慢慢理解與練習實作。<br/>
+一、取得玩家操作<br/>
+二、移動單位/棋子<br/>
 <br/>
-###一、取得玩家操作<br/>
-###二、移動單位/棋子<br/>
+<br/>
 
 
 ## Coding Style說明
