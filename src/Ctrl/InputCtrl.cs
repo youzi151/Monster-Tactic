@@ -6,7 +6,7 @@ public class InputCtrl{
 	/*==============Members===============*/
 
 	//正在偵聽操作的物件清單
-	public List<Action<T>> listenerList;
+	public List< Func<T, bool> > listenerList;
 
 
 	/*=============Components=============*/
@@ -17,10 +17,23 @@ public class InputCtrl{
 
 	/*===========Public Function==========*/
 	//加入偵聽者  params: 偵聽者本身, 優先度
-	public void AddListener(Action<T> listener, int priority){}
+	public void AddListener(Func<T, bool> listener, float priority){
+		
+		//加入偵聽者
+		listenerList.Add(listener);
+
+		//TODO : 排序
+
+
+
+
+	}
 
 	//移除偵聽者  params: 偵聽者本身
-	public void RemoveListener(Action<T> listener){}
+	public void RemoveListener(Func<T, bool> listener){
+		//加入偵聽者
+		listenerList.Remove(listener);
+	}
 
 	//檢查Input，可放於Update執行
 	public void CheckInput(){
@@ -34,16 +47,21 @@ public class InputCtrl{
 
 	//依序通知每一個listener
 	private void notifyListeners(T inputInfo){
-		//先排序，以免優先度失效
-		this.sortListener();
 
-		foreach(Action<T> eachListener in listenerList){
-			eachListener(inputInfo);
+		//依序通知，並詢問是否已經取用  (已取用 == 不給下一個listener)
+		foreach(Func<T, bool> eachNotify in listenerList){
+
+			//若該listener回傳true，則代表已取用
+			bool isUsed = eachNotify(inputInfo);
+
+			//若已取用，停止繼續通知其他listener
+			if (isUsed){
+				break;
+			}
+
 		}
 	}
 
-	//依照優先度排序
-	private void sortListener(){}
 
 
 
