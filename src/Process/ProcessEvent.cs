@@ -16,12 +16,12 @@ public class ProcessEvent{
 	/*===========Public Function==========*/
 	
 	//進入此事件的所屬節點時呼叫
-	public virtual void begin(){
+	public virtual void Begin(){
 		//內容繼承後自定義
 	}
 	
 	//結束此事件的所屬節點時呼叫
-	public virtual void end(){
+	public virtual void End(){
 		//內容繼承後自定義
 	}
 

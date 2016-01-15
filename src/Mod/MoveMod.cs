@@ -17,10 +17,10 @@ public class MoveMod{
 
 	/*===========Public Function==========*/
 	//操作按下
-	public void onInputDown(){}
+	public void OnInputDown(){}
 
 	//操作彈起
-	public void onInputUp(){}
+	public void OnInputUp(){}
 	
 	
 	/*==========Private Function==========*/

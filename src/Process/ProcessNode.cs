@@ -43,7 +43,7 @@ public class ProcessNode{
 	/*===========Public Function==========*/
 	
 	//開始此節點進程，通常受上一節點呼叫
-	public void begin(){
+	public void Begin(){
 		this._status = ProcessStatus.ACTIVE;
 		foreach (ProcessEvent eachEvent in eventList){
 			eachEvent.begin();
@@ -52,7 +52,7 @@ public class ProcessNode{
 	}
 	
 	//結束此節點進程
-	public void end(){
+	public void End(){
 		this._status = ProcessStatus.CLOSE;
 		foreach (ProcessEvent eachEvent in eventList){
 			eachEvent.end();
@@ -61,7 +61,7 @@ public class ProcessNode{
 	}
 
 	//檢查是否完成條件
-	public void checkIfComplete(){
+	public void CheckIfComplete(){
 		//先預設 條件狀態 已完成
 		bool isCompelete = true;
 		//若有條件尚未完成，則 條件狀態 改為 未完成，並跳出

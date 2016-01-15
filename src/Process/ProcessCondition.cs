@@ -41,35 +41,35 @@ public class ProcessCondition{
 	//NOTE : 每一個函式呼叫內容順序不儘一樣，因為要符合使用者期待。
 	
 	//開始偵聽
-	public void start(){
+	public void Start(){
 		this._start();
 		onStart();//event
 		isListening = true;
 	}
 
 	//暫停偵聽
-	public void pause(){
+	public void Pause(){
 		isListening = false;
 		this._pause();
 		onPause();//event
 	}
 
 	//繼續偵聽
-	public void resume(){
+	public void Resume(){
 		this._resume();
 		onResume();//event
 		isListening = true;
 	}
 	
 	//暫停偵聽
-	public void stop(){
+	public void Stop(){
 		isListening = false;
 		this._stop();
 		onStop();//event
 	}
 
 	//重置此條件
-	public void reset(){
+	public void Reset(){
 		isComplete = false;
 		this._reset();//event
 	}

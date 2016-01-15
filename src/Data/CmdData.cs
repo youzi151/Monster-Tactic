@@ -17,13 +17,13 @@ public class CmdData{
 
 	/*===========Public Function==========*/
 	//執行
-	public void do(){}
+	public void Do(){}
 
 	//復原
-	public void undo(){}
+	public void Undo(){}
 	
 	//取消
-	public void cancel(){}
+	public void Cancel(){}
 	
 	
 

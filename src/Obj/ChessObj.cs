@@ -30,13 +30,13 @@ public class ChessObj{
 
 	/*===========Public Function==========*/
 	//行動
-	public void action(){}
+	public void Action(){}
 
 	//受傷
-	public void hurt(){}
+	public void Hurt(){}
 	
 	//死亡
-	public void dead(){}
+	public void Dead(){}
 	
 	
 

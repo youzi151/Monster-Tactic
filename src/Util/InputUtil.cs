@@ -19,7 +19,7 @@ public class InputUtil{
 
 
 	//舉例
-	public Object getHitObj_example(){
+	public Object GetHitObj_example(){
 		if (某某操作){
 			return 包裝好的Input資料;
 		}else{

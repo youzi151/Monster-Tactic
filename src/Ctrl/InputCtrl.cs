@@ -17,13 +17,13 @@ public class InputCtrl{
 
 	/*===========Public Function==========*/
 	//加入偵聽者  params: 偵聽者本身, 優先度
-	public void addListener(Action<T> listener, int priority){}
+	public void AddListener(Action<T> listener, int priority){}
 
 	//移除偵聽者  params: 偵聽者本身
-	public void removeListener(Action<T> listener){}
+	public void RemoveListener(Action<T> listener){}
 
 	//檢查Input，可放於Update執行
-	public void checkInput(){
+	public void CheckInput(){
 		Object info = InputUtil.getHitObj_example();
 		if (info != null){
 			this.notifyListener(info);
