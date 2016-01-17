@@ -7,9 +7,9 @@ public enum ProcessStatus{
 
 public class ProcessNode{
 
-	/*=============constructor============*/
+	/*======================================Constructor==========================================*/
 
-	/*==============Members===============*/
+	/*=========================================Members===========================================*/
 
 	//節點狀態
 	private ProcessStatus _status = ProcessStatus.UNACTIVE;
@@ -23,7 +23,7 @@ public class ProcessNode{
 	public bool isCloseOnComplete = false;
 
 
-	/*=============Components=============*/
+	/*========================================Components=========================================*/
 
 	//此節點會執行的事件
 	public List<ProcessEvent> eventList;
@@ -35,12 +35,12 @@ public class ProcessNode{
 	public List<ProcessNode> nextNodeList;
 
 
-	/*================Event===============*/
+	/*==========================================Event============================================*/
 	public event Action<T> onProcessBegin;
 	public event Action<T> onProcessEnd;
 
 
-	/*===========Public Function==========*/
+	/*=====================================Public Function=======================================*/
 	
 	//開始此節點進程，通常受上一節點呼叫
 	public void Begin(){
@@ -78,7 +78,7 @@ public class ProcessNode{
 		}	
 	}
 
-	/*==========Private Function==========*/
+	/*====================================Private Function=======================================*/
 
 	//當完成條件時呼叫
 	private void onCoditionComplete(){

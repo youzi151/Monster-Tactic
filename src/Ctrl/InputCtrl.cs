@@ -3,19 +3,19 @@ using System.Collections.Generic;
 
 public class InputCtrl{
 
-	/*==============Members===============*/
+	/*=========================================Members===========================================*/
 
 	//正在偵聽操作的物件清單
 	public List< Func<T, bool> > listenerList;
 
 
-	/*=============Components=============*/
+	/*========================================Components=========================================*/
 
 
-	/*================Event===============*/
+	/*==========================================Event============================================*/
 
 
-	/*===========Public Function==========*/
+	/*=====================================Public Function=======================================*/
 	//加入偵聽者  params: 偵聽者本身, 優先度
 	public void AddListener(Func<T, bool> listener, float priority){
 		
@@ -43,7 +43,7 @@ public class InputCtrl{
 		}
 	}
 
-	/*==========Private Function==========*/
+	/*====================================Private Function=======================================*/
 
 	//依序通知每一個listener
 	private void notifyListeners(T inputInfo){

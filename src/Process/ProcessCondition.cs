@@ -2,9 +2,9 @@ using System.Collections;
 
 public class ProcessCondition{
 
-	/*=============constructor============*/
+	/*======================================Constructor==========================================*/
 
-	/*==============Members===============*/
+	/*=========================================Members===========================================*/
 	
 
 	//是否正在偵聽
@@ -25,10 +25,10 @@ public class ProcessCondition{
 	}
 
 
-	/*=============Components=============*/
+	/*========================================Components=========================================*/
 
 
-	/*================Event===============*/
+	/*==========================================Event============================================*/
 	public event Action<T> onCompelete;
 
 	public event Action<T> onStart;
@@ -36,7 +36,7 @@ public class ProcessCondition{
 	public event Action<T> onResume;
 	public event Action<T> onStop;
 
-	/*===========Public Function==========*/
+	/*=====================================Public Function=======================================*/
 
 	//NOTE : 每一個函式呼叫內容順序不儘一樣，因為要符合使用者期待。
 	
@@ -74,7 +74,7 @@ public class ProcessCondition{
 		this._reset();//event
 	}
 
-	/*==========Private Function==========*/
+	/*====================================Private Function=======================================*/
 	//開始偵聽
 	public virtual void _start(){
 		//內容繼承後自定義
