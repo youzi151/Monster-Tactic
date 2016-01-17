@@ -33,6 +33,15 @@ public class InputCtrl{
 		listenerList.Remove(listener);
 	}
 
+	//排序
+	public void SortListener(){
+		//根據各Listener的priority(優先度)排序
+		listenerList.Sort((a, b) => {
+			return (a.priority > b.priority) ? 1:0;
+		});
+	}
+
+
 	//檢查Input，可放於Update執行
 	public void CheckInput(){
 		Object inputInfo = InputUtil.getHitObj_example();
