@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 
 public class ProcessCondition{
@@ -5,10 +6,9 @@ public class ProcessCondition{
 	/*======================================Constructor==========================================*/
 
 	/*=========================================Members===========================================*/
-	
 
 	//是否正在偵聽
-	private bool _isListening = false;
+	protected bool _isListening = false;
 	public bool isListening{
 		get{
 			return _isListening;
@@ -17,10 +17,10 @@ public class ProcessCondition{
 
 
 	//是否已滿足條件
-	private bool _isComplete = false;
-	public bool isComplete{
+	protected bool _isCompelete = false;
+	public bool isCompelete{
 		get{
-			return _isComplete;
+			return _isCompelete;
 		}
 	}
 
@@ -29,27 +29,26 @@ public class ProcessCondition{
 
 
 	/*==========================================Event============================================*/
-	public event Action<T> onCompelete;
-
-	public event Action<T> onStart;
-	public event Action<T> onPause;
-	public event Action<T> onResume;
-	public event Action<T> onStop;
+	public event Action onCompelete = delegate{};
+	public event Action onBegin = delegate{};
+	public event Action onPause = delegate{};
+	public event Action onResume = delegate{};
+	public event Action onEnd = delegate{};
 
 	/*=====================================Public Function=======================================*/
 
 	//NOTE : 每一個函式呼叫內容順序不儘一樣，因為要符合使用者期待。
 	
 	//開始偵聽
-	public void Start(){
-		this._start();
-		onStart();//event
-		isListening = true;
+	public void Begin(){
+		this._begin();
+		onBegin();//event
+		_isListening = true;
 	}
 
 	//暫停偵聽
 	public void Pause(){
-		isListening = false;
+		_isListening = false;
 		this._pause();
 		onPause();//event
 	}
@@ -58,47 +57,71 @@ public class ProcessCondition{
 	public void Resume(){
 		this._resume();
 		onResume();//event
-		isListening = true;
+		_isListening = true;
 	}
 	
 	//暫停偵聽
-	public void Stop(){
-		isListening = false;
-		this._stop();
-		onStop();//event
+	public void End(){
+		_isListening = false;
+		this._end();
+		onEnd();//event
 	}
 
 	//重置此條件
 	public void Reset(){
-		isComplete = false;
+		_isCompelete = false;
 		this._reset();//event
 	}
 
-	/*====================================Private Function=======================================*/
+	//檢查是否已完成
+	public virtual void CheckIfCompelete(){
+		//內容繼承後自定義
+		//例如:
+		if (isListening){
+			//作某種檢查
+			
+			//若沒通過
+			return;
+
+			//若通過
+			compelete();
+		}
+	}
+
+	
+	/*===================================Protected Function======================================*/
+	//設置為完成
+	protected void compelete(){
+		_isCompelete = true;
+	}
+
+
 	//開始偵聽
-	public virtual void _start(){
+	protected virtual void _begin(){
 		//內容繼承後自定義
 	}
 
 	//暫停偵聽
-	public virtual void _pause(){
+	protected virtual void _pause(){
 		//內容繼承後自定義
 	}
 
 	//繼續偵聽
-	public virtual void _resume(){
+	protected virtual void _resume(){
 		//內容繼承後自定義
 	}
 	
 	//暫停偵聽
-	public virtual void _stop(){
+	protected virtual void _end(){
 		//內容繼承後自定義
 	}
 
 	//重置此條件
-	public virtual void _reset(){
+	protected virtual void _reset(){
 		//內容繼承後自定義
 	}
+	
 
+	/*====================================Private Function=======================================*/
 
 }
